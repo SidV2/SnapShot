@@ -15,4 +15,5 @@ const composeEnhancer =
 
 const composedEnhancers = composeEnhancer(applyMiddleware(...middleWares));
 
+// all states 
 export const store = createStore(rootReducer, undefined, composedEnhancers);
