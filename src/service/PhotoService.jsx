@@ -1,5 +1,7 @@
 import axios from "axios";
 import { apiKey } from "../api/config";
+import { store } from "../store/store";
+import { setImages } from "../store/photos/photos.actions";
 
 export const runSearch = query => {
   axios
@@ -8,7 +10,7 @@ export const runSearch = query => {
     )
     .then(response => {
       console.log(response);
-      //setImages(response.data.photos.photo);
+      store.dispatch(setImages(response.data.photos.photo));
       //setLoading(false);
     })
     .catch(error => {
@@ -18,4 +20,3 @@ export const runSearch = query => {
       );
     });
 };
-

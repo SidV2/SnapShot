@@ -1,4 +1,4 @@
-import USER_ACTION_TYPES from './photos.types';
+import PHOTOS_ACTION_TYPES from './photos.types';
 
 export const USER_INITIAL_STATE = {
   photos: [],
@@ -6,10 +6,13 @@ export const USER_INITIAL_STATE = {
 
 export const photosReducer = (state = USER_INITIAL_STATE, action = {}) => {
   const { type, payload } = action;
-
+  console.log(action);
   switch (type) {
-    case USER_ACTION_TYPES.SET_CURRENT_USER:
-      return { ...state, photos: payload };
+    case PHOTOS_ACTION_TYPES.SET_IMAGES:
+      return { 
+        ...state, 
+        photos: payload 
+      };
     default:
       return state;
   }
