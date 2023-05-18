@@ -6,3 +6,6 @@ export const setSearchParamter = (searchInput) =>
 
 export const setImages = (photos) =>
   createAction(PHOTOS_ACTION_TYPES.SET_IMAGES, photos);
+
+export const setLoading = (laodingStatus) =>
+  createAction(PHOTOS_ACTION_TYPES.SET_LOADING, laodingStatus);
